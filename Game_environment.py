@@ -148,4 +148,15 @@ class GameEnvironment:
         Checks if the snake turns into itself. Ends the game if this happens
         :return: None
         """
-
+        head = pygame.Rect(self.snake[0].get_position()[0],
+                           self.snake[0].get_position()[1],
+                           20, 20)
+        for snake in self.snake[1:]:
+            body = pygame.Rect(snake.get_position()[0],
+                               snake.get_position()[1],
+                               20, 20)
+            if (head.centerx, head.centery) == (body.centerx, body.centery):
+                # checking if the center of the snake's head is in the center of
+                # a part of its body
+                self.status = 0  # killing the snake
+                break
