@@ -129,6 +129,19 @@ class GameEnvironment:
         too.
         :return:
         """
+        for i in range(len(self.food.x)): # iterating through all food on screen
+            x = self.food.x[i]
+            y = self.food.y[i]
+            if pygame.Rect(self.snake[i].get_position()[0],
+                           self.snake[i].get_position()[1],
+                           20, 20).collidepoint(x, y):
+                # checking if the food snake's head collides with a food object
+                self.snake.append(
+                    self.snake[len(self.snake) - 1].get_next_snake())
+                # making the snake longer.
+                self.food.get_eaten(i)
+                # recording that food was eaten for scoring purposes
+                break
 
     def check_suicide(self):
         """
