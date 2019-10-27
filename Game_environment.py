@@ -36,7 +36,37 @@ class GameEnvironment:
                 made from here.
                 :return: None
         """
+        done = False
+        clock = pygame.time.Clock()
+        while not done:  # start of the event loop
+            for event in pygame.event.get():  # piping out the events
+                if event.type == pygame.QUIT:
+                    self.status = 0
+                    done = True
+            self.food.set_level()  # getting the food level set for the game
+            self.fps = (self.food.level * 10) + 50
+            # setting the speed of the game according the food level
+            self.check_wall()  # checking if the snake has banged into the wall
+            self.check_suicide()  # checking if the snake has turned into itself
+            if self.status == 0:  # checking if the snake is supposed to dead.
+                done = True
+            self.check_food()  # checking if the snake has eaten food.
+            pressed = pygame.key.get_pressed()
+            self.update_position(pressed, self.snake[0].x_coord,
+                                 self.snake[0].y_coord)
+            # updating the position of the snake according to input direction
+            self.surface.fill((0, 0, 0))
+            for i in range(len(self.food.x)):  # loop to display all food.
+                pygame.draw.circle(self.surface, (255, 255, 255),
+                                   (self.food.x[i], self.food.y[i]), 10)
+            for i in range(len(self.snake)):  # loop to display entire snake
+                pygame.draw.rect(self.surface, (0, 128, 255),
+                                 pygame.Rect(self.snake[i].get_position()[0],
+                                             self.snake[i].get_position()[1],
+                                             20, 20))
 
+            self.screen.flip()
+            clock.tick(self.fps)
 
     def update_position(self, pressed, x_coord, y_coord):
         """
