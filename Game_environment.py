@@ -77,6 +77,36 @@ class GameEnvironment:
         :param y_coord: The y coordinate where the change in direction happens
         :return: None
         """
+        dir = ''  # String to represent the input direction
+        if pressed[pygame.K_LEFT]:  # Condition when left arrow key is pressed
+            dir = 'l'
+        elif pressed[pygame.K_UP]:  # Condition when up arrow key is pressed
+            dir = 'u'
+        elif pressed[pygame.K_DOWN]:  # Condition when down arrow key is pressed
+            dir = 'd'
+        elif pressed[pygame.K_RIGHT]:  # Condition for right arrow key press
+            dir = 'r'
+        if dir != '':  # when there is no input, continue in original direction
+            self.dir_change_location[(x_coord, y_coord)] = dir
+        for i in range(len(self.snake)):
+            if (self.snake[i].x_coord, self.snake[i].y_coord) in \
+                    self.dir_change_location.keys():
+                # checking if a snake node has reached a point where it has to
+                # change direction.
+                old_x = self.snake[i].x_coord
+                old_y = self.snake[i].y_coord
+                self.snake[i].move(
+                    self.dir_change_location[(self.snake[i].x_coord,
+                                              self.snake[i].y_coord)])
+                # moving that snake object in the direction it has to go in at
+                # that point. The direction is given by the dictionary.
+                if i == len(self.snake) - 1:
+                    del self.dir_change_location[(old_x, old_y)]
+                    # once the last snake node passes a point, get rid of that
+                    # point in the dictionary to prevent the snake from
+                    # following old instructions
+            else:
+                self.snake[i].move(self.snake[i].direction)
 
 
     def check_wall(self):
