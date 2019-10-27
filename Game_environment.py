@@ -115,7 +115,12 @@ class GameEnvironment:
         this happens.
         :return: None
         """
-
+        head = self.snake[0]
+        x = head.get_position()[0]
+        y = head.get_position()[1]
+        if x > 800 or y > 600 or x < 0 or y < 0:
+            # checking if the head of the snake collides with a wall.
+            self.status = 0  # killing the snake
 
     def check_food(self):
         """
