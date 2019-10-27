@@ -18,7 +18,15 @@ class GameEnvironment:
                             It is 1 if game is running, 0 if game is over.
         """
     def __init__(self):
-
+        pygame.init()
+        self.status = 1
+        self.screen = pygame.display
+        self.surface = self.screen.set_mode((800, 600))
+        self.snake = [Snake(200, 200, 'r')]
+        self.fps = 60
+        self.dir_change_location = {}
+        self.food = Food()
+        self.food.generate_food()
 
     def events(self):
         """
