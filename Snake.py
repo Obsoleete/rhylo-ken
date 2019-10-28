@@ -115,11 +115,11 @@ class Snake:
             y = self.y_coord - 20
             direction = self.direction
         elif self.direction == 'r':
-            x = self.x_coord + 20
+            x = self.x_coord - 20
             y = self.y_coord
             direction = self.direction
         else:
-            x = self.x_coord - 20
+            x = self.x_coord + 20
             y = self.y_coord
             direction = self.direction
 
