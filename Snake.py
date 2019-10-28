@@ -104,15 +104,15 @@ class Snake:
          >>> snake2.x_coord
          50
          >>> snake2.y_coord
-         55
+         95
         """
         if self.direction == 'u':
             x = self.x_coord
-            y = self.y_coord - 20
+            y = self.y_coord + 20
             direction = self.direction
         elif self.direction == 'd':
             x = self.x_coord
-            y = self.y_coord + 20
+            y = self.y_coord - 20
             direction = self.direction
         elif self.direction == 'r':
             x = self.x_coord + 20
