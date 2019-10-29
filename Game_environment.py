@@ -155,9 +155,8 @@ class GameEnvironment:
             body = pygame.Rect(snake.get_position()[0],
                                snake.get_position()[1],
                                20, 20)
-            if (head.centerx, head.centery) == (body.centerx, body.centery):
+            if head.collidepoint(body.centerx, body.centery):
                 # checking if the center of the snake's head is in the center of
                 # a part of its body
                 self.status = 0  # killing the snake
                 break
-
