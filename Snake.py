@@ -93,8 +93,8 @@ class Snake:
                 creates another snake object, hence increasing the length of
                 the entire snake. The new snake object has the same direction
                 as the current snake object. One snake object has dimensions of
-                20 (an is square), so the position of the new snake object has
-                to be shifted by 20 in the appropriate direction
+                25 (an is square), so the position of the new snake object has
+                to be shifted by 25 in the appropriate direction
                 :return: Snake
 
          >>> snake = Snake(50, 75, 'u')
@@ -104,22 +104,22 @@ class Snake:
          >>> snake2.x_coord
          50
          >>> snake2.y_coord
-         95
+         100
         """
         if self.direction == 'u':
             x = self.x_coord
-            y = self.y_coord + 20
+            y = self.y_coord + 25
             direction = self.direction
         elif self.direction == 'd':
             x = self.x_coord
-            y = self.y_coord - 20
+            y = self.y_coord - 25
             direction = self.direction
         elif self.direction == 'r':
-            x = self.x_coord - 20
+            x = self.x_coord - 25
             y = self.y_coord
             direction = self.direction
         else:
-            x = self.x_coord + 20
+            x = self.x_coord + 25
             y = self.y_coord
             direction = self.direction
 

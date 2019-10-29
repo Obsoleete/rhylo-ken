@@ -160,3 +160,4 @@ class GameEnvironment:
                 # a part of its body
                 self.status = 0  # killing the snake
                 break
+
