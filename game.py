@@ -43,8 +43,10 @@ class Game:
         end_game_display when the game ends
         :return: None
         """
-        # To be implemented
-        pass
+        self.environment.events()
+        if self.environment.status == 0:
+            pygame.quit()
+            self.end_game_display()
 
     def end_game_display(self):
         """
