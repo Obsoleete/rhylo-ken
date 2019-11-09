@@ -61,9 +61,16 @@ def get_score(game_object):
     level and amount eaten.
     :param game_object: Game object
     :return: int
+
+    >>> game = Game()
+    >>> print(game.score)
+    0
+    >>> get_score(game)
+    0
+
     """
-    # To be implemented
-    pass
+    game_object.score = game_object.level * game_object.environment.food.eaten
+    return game_object.score
 
 
 def get_final_score(game_object):
