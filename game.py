@@ -1,4 +1,4 @@
-from Game_environment import GameEnvironment
+from game_environment import GameEnvironment
 import pygame
 
 

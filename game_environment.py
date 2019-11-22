@@ -1,6 +1,6 @@
 import pygame
-from Snake import Snake
-from Food import Food
+from snake_pixel import Snake
+from food import Food
 
 
 class GameEnvironment:
@@ -23,7 +23,7 @@ class GameEnvironment:
         self.screen = pygame.display
         self.surface = self.screen.set_mode((800, 600))
         self.snake = [Snake(200, 200, 'r')]
-        self.fps = 60
+        self.fps = 100
         self.dir_change_location = {}
         self.food = Food()
         self.food.generate_food()
@@ -44,7 +44,7 @@ class GameEnvironment:
                     self.status = 0
                     done = True
             self.food.set_level()  # getting the food level set for the game
-            self.fps = (self.food.level * 10) + 50
+            self.fps = (self.food.level * 10) + 100
             # setting the speed of the game according the food level
             self.check_wall()  # checking if the snake has banged into the wall
             self.check_suicide()  # checking if the snake has turned into itself
@@ -60,7 +60,7 @@ class GameEnvironment:
                 pygame.draw.circle(self.surface, (255, 255, 255),
                                    (self.food.x[i], self.food.y[i]), 10)
             for i in range(len(self.snake)):  # loop to display entire snake
-                pygame.draw.rect(self.surface, (0, 128, 255),
+                pygame.draw.rect(self.surface, (55, 255, 55),
                                  pygame.Rect(self.snake[i].get_position()[0],
                                              self.snake[i].get_position()[1],
                                              20, 20))
