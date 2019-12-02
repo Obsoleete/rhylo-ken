@@ -23,7 +23,7 @@ git clone https://github.com/rhylo-ken.git
 
 ## Usage example
 
-After downloading all files, run game.py with Python to play the game. 
+After downloading all files, run game.py with Python to play the game.
 
 
 
@@ -40,7 +40,7 @@ After downloading all files, run game.py with Python to play the game.
     * ADD: Initial classes and their outline
 * 0.0.1
     * Work in progress
-    
+
 ## Repository Structure
 
 The repository is structured in a way where the 4 main classes are downloaded and the game is ran through the game.py file. The class breakdown is as follows:
@@ -50,9 +50,18 @@ This class deals with all interactions involving the food objects present in-gam
 
 * `generate_food(self)` generates an amount of food proportional to the game's difficulty level. Food is generated randomly. This can be changed to have food be generated in a linear fashion or near certain corners for lesser and added difficulty respectively. Done through the editing the "Y coordinate" or "X coordinate" range to be tighter, in this sense, food will still be generated randomly but around a certain spot in the game-environment.
 
-* `get_eaten(self, index)` Deals with conditions involving the food being eaten. Keeps track of total amount of food eaten in this level of the game. Deletes the eaten food at the list index it's in and respawns food elsewhere randomly. 
+* `get_eaten(self, index)` Deals with conditions involving the food being eaten. Keeps track of total amount of food eaten in this level of the game. Deletes the eaten food at the list index it's in and respawns food elsewhere randomly.
 
 * `set_level(self)` sets the difficulty level for the food being spawned in the game. At each level increase there is a higher amount of food spawned in. Currently, the defualt is that for every four pieces of food eaten the level increases by one. This can be changed by editing the multiplier that increments the level based on food eaten (Currently multiplier = 0.25)
+
+### `snake_pixel.py`
+This file contains a Snake class. It deals with all the relating features with the snake, such as moving the snake, and acquiring the postion of the snake and lengthening the snake. Here is the class breakdown:
+
+* `get_postion(self)` returns the tuple contains x and y values of the point where the snake located. The x value refers to the horizontal position in the game map. The y value refers to the vertical position in the game map.
+
+* `move(self, key_pressed)` returns nothing. Take the key value when user presses the keyboard as a parameter to determine move a snake object to three directions. Note: The snake cannot move backward since the snake's body cannot overlap itself. The method moves the Snake object by changing the x and y values according to the key_pressed value.
+
+* `get_next_snake(self)` returns a new Snake object. The method instantiates a new Snake object followed the tail of the snake. Hence, the direction of the snake object will be the same and the length of the snake increases.
 
 ## Meta
 
@@ -79,7 +88,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-The Rhylo-Ken Team: 
+The Rhylo-Ken Team:
 
 * Obsoleete: https://github.com/Obsoleete
 * ridz-rs: https://github.com/ridz-rs
@@ -96,8 +105,11 @@ The Rhylo-Ken Team:
 
 ## Individual Contributions
 
-### nietzchesoverman: 
+### nietzchesoverman:
 Implemented the "Food.py" class in its entirety. Licensed the repository and wrote out the "META" section of the readme. Updated the "Release History" to accurately reflect the development of the game "Pixel Snake." Created the "Repositroy Structure" sub-heading and expanded upon the intracacies of the "Food.py" class as well as detailing what features can be updated with the source-code as is. Added the "Individual Contributions" sub-heading. Made general grammar edits throughout the entire readme.
+
+### jerrylai:
+Implemented the "Snake.py" file. Wrote down the description and listed methods contained in "Snake.py" file.
 
 <!-- Markdown link & img dfn's -->
 [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
