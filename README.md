@@ -20,10 +20,13 @@ Windows:
 ```sh
 git clone https://github.com/rhylo-ken.git
 ```
+## How to play the game
 
-## Usage example
+Pixel Snake is a single player game. The game consists of a snake that is operated by the player. The snake is blue in color as can be seen in the picture below. The player guides the snake using the arrow keys to consume the food that spawns around the map. The food are the white circles shown below. The more food the snake eats, the longer and faster it gets. If the snake touches its own body or the walls, then the game is over. The main point of the game is to last as long as you can and collect food in the process without dying. 
 
-After downloading all files, run game.py with Python to play the game.
+![Screenshot from 2019-12-02 23-28-20](https://user-images.githubusercontent.com/47087766/70020705-b1f43400-155b-11ea-8619-6c464d84c6f5.png)
+
+
 
 
 
