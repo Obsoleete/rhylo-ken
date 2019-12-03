@@ -63,14 +63,16 @@ This file contains a Snake class. It deals with all the relating features with t
 
 * `get_next_snake(self)` returns a new Snake object. The method instantiates a new Snake object followed the tail of the snake. Hence, the direction of the snake object will be the same and the length of the snake increases.
 
-### 'game_environment.py'
-This file contains the GameEnvironment class. It deals with everything related to the front-end environment of the game. It also assembles all objects (such as the snake, food etc.) dictates their behaviour in the environment. Following are the methods available in GameEnvironment.
+### `game.py`
+This file contains the Game class which is where you would launch the application from. It additionally deals with setting the difficulty level of the game, calculation of the score and the end game screen once the player dies.
 
-* `events(self)` Contains the event loop for the pygame window.Rectangle images for the snake and the Circle images for food are created in this event loop. Calls to other GameEnvironment methods are made from here.
+* `set_level(self, level)` Sets the initial difficulty level of the game. Changes the food levels in the environment accordingly and changes the fps of the environment.The level parameter here gives the ability for the users of this code to extend the game, by giving players the option to set a difficulty level of their own. 
 
-* `update_position(self, pressed, x_coord, y_coord)` Method to make sure that all snake objects change direction at given point
-* `check_wall(self)` Method to check if the snake's head has hit the wall. Ends the game if this happens.
-* `check_suicide(self)` Checks if the snake turns into itself. Ends the game if this happens
+* `run_game(self)` This is the method where the game runs from. The events() methods for environment is called here, which is what starts up the game. When an end game condition is reached, the snake game display is closed and the end game display opens up.
+
+* `end_game_display(self)` This method creates and displays a pygame window with the appropriate message displayed. It also allows the user to quit or restart the game. This is handled by tracking where the mouse is at any given time on the display and if it falls within the border of the restart game rectangle, then the game restarts. On the other hand, if it falls within the quit game rectangle, the display window closes and the game shuts down.
+
+* `get_score(game_object)` This is a static method that returns the score in a given game. The score is calculated using the level and amount eaten. Currently the score is not displayed but the option is available. Users of the game have the option to extend the game by displaying the score, using this method to do so.
 
 ## Meta
 
@@ -119,9 +121,6 @@ Implemented the "Food.py" class in its entirety. Licensed the repository and wro
 
 ### jerrylai:
 Implemented the "Snake.py" file. Wrote down the description and listed methods contained in "Snake.py" file.
-
-### rids-rs:
-Set up the code design structure of the entire game. Designed the methods and interactions that classes would make with each other through these methods. Set up empty class and method shells in all four python files, along with doctests to allow for the developers to understand follow the design structure of the software with ease. Documented all the classes to allow for the ease of understanding their purpose and implementations. Implemented the GameEnvironment class. 
 
 <!-- Markdown link & img dfn's -->
 [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
