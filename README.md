@@ -63,7 +63,7 @@ This file contains a Snake class. It deals with all the relating features with t
 
 * `get_next_snake(self)` returns a new Snake object. The method instantiates a new Snake object followed the tail of the snake. Hence, the direction of the snake object will be the same and the length of the snake increases.
 
-### 'game_environment.py'
+### `game_environment.py`
 This file contains the GameEnvironment class. It deals with everything related to the front-end environment of the game. It also assembles all objects (such as the snake, food etc.) dictates their behaviour in the environment. Following are the methods available in GameEnvironment.
 
 * `events(self)` Contains the event loop for the pygame window.Rectangle images for the snake and the Circle images for food are created in this event loop. Calls to other GameEnvironment methods are made from here.
