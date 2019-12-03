@@ -63,6 +63,16 @@ This file contains a Snake class. It deals with all the relating features with t
 
 * `get_next_snake(self)` returns a new Snake object. The method instantiates a new Snake object followed the tail of the snake. Hence, the direction of the snake object will be the same and the length of the snake increases.
 
+### 'game_environment.py'
+This file contains the GameEnvironment class. It deals with everything related to the front-end environment of the game. It also assembles all objects (such as the snake, food etc.) dictates their behaviour in the environment. Following are the methods available in GameEnvironment.
+
+* `events(self)` Contains the event loop for the pygame window.Rectangle images for the snake and the Circle images for food are created in this event loop. Calls to other GameEnvironment methods are made from here.
+
+* `update_position(self, pressed, x_coord, y_coord)` Method to make sure that all snake objects change direction at given point
+* `check_wall(self)` Method to check if the snake's head has hit the wall. Ends the game if this happens.
+* `check_suicide(self)` Checks if the snake turns into itself. Ends the game if this happens
+
+
 ### `game.py`
 This file contains the Game class which is where you would launch the application from. It additionally deals with setting the difficulty level of the game, calculation of the score and the end game screen once the player dies.
 
@@ -121,6 +131,9 @@ Implemented the "Food.py" class in its entirety. Licensed the repository and wro
 
 ### jerrylai:
 Implemented the "Snake.py" file. Wrote down the description and listed methods contained in "Snake.py" file.
+
+### rids-rs:
+Set up the code design structure of the entire game. Designed the methods and interactions that classes would make with each other through these methods. Set up empty class and method shells in all four python files, along with doctests to allow for the developers to understand follow the design structure of the software with ease. Documented all the classes to allow for the ease of understanding their purpose and implementations. Implemented the GameEnvironment class. 
 
 <!-- Markdown link & img dfn's -->
 [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
