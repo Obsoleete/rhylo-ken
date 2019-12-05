@@ -129,14 +129,17 @@ The Rhylo-Ken Team:
 
 ## Individual Contributions
 
-### nietzchesoverman:
+### nietzchesoverman (Yousif Jamal):
 Implemented the "Food.py" class in its entirety. Licensed the repository and wrote out the "META" section of the readme. Updated the "Release History" to accurately reflect the development of the game "Pixel Snake." Created the "Repositroy Structure" sub-heading and expanded upon the intracacies of the "Food.py" class as well as detailing what features can be updated with the source-code as is. Added the "Individual Contributions" sub-heading. Made general grammar edits throughout the entire readme.
 
-### jerrylai:
+### jerrylai (Jerry Lai):
 Implemented the "Snake.py" file. Wrote down the description and listed methods contained in "Snake.py" file.
 
-### rids-rs:
+### rids-rs (Riddhesh Shah):
 Set up the code design structure of the entire game. Designed the methods and interactions that classes would make with each other through these methods. Set up empty class and method shells in all four python files, along with doctests to allow for the developers to understand follow the design structure of the software with ease. Documented all the classes to allow for the ease of understanding their purpose and implementations. Implemented the GameEnvironment class. 
+
+### Obsoleete (Hamza Khan): 
+I was put in charge of implementing the Game class in its entirety. The Game class combines the other classes and is where you would run the game from. I also added instructions on how to play the game for new and old users alike. I added screenshots in the how to play the game section of the readme, so it's easier for users to understand how to play the game, by knowing what each piece of the game looks like. Lastly, I edited the readme and helped group members when needed.
 
 <!-- Markdown link & img dfn's -->
 [npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
